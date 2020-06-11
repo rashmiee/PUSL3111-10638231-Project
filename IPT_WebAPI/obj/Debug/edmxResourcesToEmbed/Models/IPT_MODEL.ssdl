@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IPT_DATABASEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="IT_EXPERT_MAST">
+    <Key>
+      <PropertyRef Name="IT_EXPERT_USERNAME" />
+      <PropertyRef Name="IT_EXPERT_PASSWORD" />
+      <PropertyRef Name="AUTO_NUM" />
+    </Key>
+    <Property Name="IT_EXPERT_USERNAME" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IT_EXPERT_PASSWORD" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IT_EXPERT_EMAIL" Type="varchar" MaxLength="255" />
+    <Property Name="IT_EXPERT_COMPANY" Type="varchar" MaxLength="255" />
+    <Property Name="IT_EXPERT_EXPERT_AREA" Type="varchar" MaxLength="255" />
+    <Property Name="IS_APPROVED" Type="smallint" />
+    <Property Name="IS_APPROVED_BY" Type="varchar" MaxLength="255" />
+    <Property Name="IS_APPROVED_DATE" Type="date" />
+    <Property Name="PROF_PIC_URL" Type="varchar" MaxLength="255" />
+    <Property Name="USER_TYPE" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="AUTO_NUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESSAGE_MASTER">
+    <Key>
+      <PropertyRef Name="STUDENT_ID" />
+      <PropertyRef Name="IT_EXPERT_USERNAME" />
+      <PropertyRef Name="AUTO_NUM" />
+    </Key>
+    <Property Name="STUDENT_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IT_EXPERT_USERNAME" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="MESSAGE_BODY_STD" Type="nvarchar(max)" />
+    <Property Name="AUTO_NUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MESSAGE_BODY_ITE" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STUDENT_DETAILS">
+    <Key>
+      <PropertyRef Name="STUDENT_ID" />
+      <PropertyRef Name="AUTO_NUM" />
+    </Key>
+    <Property Name="STUDENT_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="STUDENT_QUALIFICATIONS" Type="varchar" MaxLength="255" />
+    <Property Name="STUDENT_SKILLS" Type="varchar" MaxLength="255" />
+    <Property Name="AUTO_NUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STUDENT_MAST">
+    <Key>
+      <PropertyRef Name="STUDENT_ID" />
+      <PropertyRef Name="AUTO_NUM" />
+    </Key>
+    <Property Name="STUDENT_ID" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="STUDENT_NAME" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="STUDENT_AGE" Type="int" />
+    <Property Name="STUDENT_COURSE" Type="varchar" MaxLength="255" />
+    <Property Name="STUDENT_USERNAME" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="STUDENT_PASSWORD" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="STUDENT_EMAIL" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IS_APPROVED" Type="smallint" Nullable="false" />
+    <Property Name="IS_APPROVED_BY" Type="varchar" MaxLength="255" />
+    <Property Name="IS_APPROVED_DATE" Type="date" />
+    <Property Name="STUDENT_PROF_PIC" Type="varchar" MaxLength="255" />
+    <Property Name="USER_TYPE" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="AUTO_NUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SYSTEM_USER">
+    <Key>
+      <PropertyRef Name="SU_USER_ID" />
+      <PropertyRef Name="AUTO_NUM" />
+    </Key>
+    <Property Name="SU_USER_ID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="SU_USERNAME" Type="varchar" MaxLength="255" />
+    <Property Name="SU_PASSWORD" Type="varchar" MaxLength="255" />
+    <Property Name="SU_NAME" Type="varchar" MaxLength="255" />
+    <Property Name="USER_TYPE" Type="varchar" MaxLength="3" />
+    <Property Name="AUTO_NUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="IPT_DATABASEModelStoreContainer">
+    <EntitySet Name="IT_EXPERT_MAST" EntityType="Self.IT_EXPERT_MAST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MESSAGE_MASTER" EntityType="Self.MESSAGE_MASTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STUDENT_DETAILS" EntityType="Self.STUDENT_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STUDENT_MAST" EntityType="Self.STUDENT_MAST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SYSTEM_USER" EntityType="Self.SYSTEM_USER" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

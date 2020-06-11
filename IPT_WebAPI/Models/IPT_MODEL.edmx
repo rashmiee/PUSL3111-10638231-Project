@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IPT_DATABASEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CATOGARY_MAST">
+          <Key>
+            <PropertyRef Name="CATOGARY_ID" />
+          </Key>
+          <Property Name="CATOGARY_ID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CATOGARY_NAME" Type="varchar" MaxLength="255" />
+          <Property Name="CATOGARY_DETAILS" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="IT_EXPERT_MAST">
+          <Key>
+            <PropertyRef Name="IT_EXPERT_USERNAME" />
+            <PropertyRef Name="IT_EXPERT_PASSWORD" />
+            <PropertyRef Name="AUTO_NUM" />
+          </Key>
+          <Property Name="IT_EXPERT_USERNAME" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="IT_EXPERT_PASSWORD" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="IT_EXPERT_EMAIL" Type="varchar" MaxLength="255" />
+          <Property Name="IT_EXPERT_COMPANY" Type="varchar" MaxLength="255" />
+          <Property Name="IT_EXPERT_EXPERT_AREA" Type="varchar" MaxLength="255" />
+          <Property Name="IS_APPROVED" Type="smallint" />
+          <Property Name="IS_APPROVED_BY" Type="varchar" MaxLength="255" />
+          <Property Name="IS_APPROVED_DATE" Type="date" />
+          <Property Name="PROF_PIC_URL" Type="varchar" MaxLength="255" />
+          <Property Name="USER_TYPE" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="AUTO_NUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MESSAGE_MASTER">
+          <Key>
+            <PropertyRef Name="STUDENT_ID" />
+            <PropertyRef Name="IT_EXPERT_USERNAME" />
+            <PropertyRef Name="AUTO_NUM" />
+          </Key>
+          <Property Name="STUDENT_ID" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="IT_EXPERT_USERNAME" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="MESSAGE_BODY_STD" Type="nvarchar(max)" />
+          <Property Name="AUTO_NUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MESSAGE_BODY_ITE" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="STUDENT_DETAILS">
+          <Key>
+            <PropertyRef Name="STUDENT_ID" />
+            <PropertyRef Name="AUTO_NUM" />
+          </Key>
+          <Property Name="STUDENT_ID" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="STUDENT_QUALIFICATIONS" Type="varchar" MaxLength="255" />
+          <Property Name="STUDENT_SKILLS" Type="varchar" MaxLength="255" />
+          <Property Name="AUTO_NUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="STUDENT_MAST">
+          <Key>
+            <PropertyRef Name="STUDENT_ID" />
+            <PropertyRef Name="AUTO_NUM" />
+          </Key>
+          <Property Name="STUDENT_ID" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="STUDENT_NAME" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="STUDENT_AGE" Type="int" />
+          <Property Name="STUDENT_COURSE" Type="varchar" MaxLength="255" />
+          <Property Name="STUDENT_USERNAME" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="STUDENT_PASSWORD" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="STUDENT_EMAIL" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="IS_APPROVED" Type="smallint" Nullable="false" />
+          <Property Name="IS_APPROVED_BY" Type="varchar" MaxLength="255" />
+          <Property Name="IS_APPROVED_DATE" Type="date" />
+          <Property Name="STUDENT_PROF_PIC" Type="varchar" MaxLength="255" />
+          <Property Name="USER_TYPE" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="AUTO_NUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SYSTEM_USER">
+          <Key>
+            <PropertyRef Name="SU_USER_ID" />
+            <PropertyRef Name="AUTO_NUM" />
+          </Key>
+          <Property Name="SU_USER_ID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SU_USERNAME" Type="varchar" MaxLength="255" />
+          <Property Name="SU_PASSWORD" Type="varchar" MaxLength="255" />
+          <Property Name="SU_NAME" Type="varchar" MaxLength="255" />
+          <Property Name="USER_TYPE" Type="varchar" MaxLength="3" />
+          <Property Name="AUTO_NUM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="IPT_DATABASEModelStoreContainer">
+          <EntitySet Name="CATOGARY_MAST" EntityType="Self.CATOGARY_MAST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IT_EXPERT_MAST" EntityType="Self.IT_EXPERT_MAST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MESSAGE_MASTER" EntityType="Self.MESSAGE_MASTER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STUDENT_DETAILS" EntityType="Self.STUDENT_DETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STUDENT_MAST" EntityType="Self.STUDENT_MAST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYSTEM_USER" EntityType="Self.SYSTEM_USER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IPT_DATABASEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="IPT_DATABASEEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CATOGARY_MAST" EntityType="IPT_DATABASEModel.CATOGARY_MAST" />
+          <EntitySet Name="IT_EXPERT_MAST" EntityType="IPT_DATABASEModel.IT_EXPERT_MAST" />
+          <EntitySet Name="MESSAGE_MASTER" EntityType="IPT_DATABASEModel.MESSAGE_MASTER" />
+          <EntitySet Name="STUDENT_DETAILS" EntityType="IPT_DATABASEModel.STUDENT_DETAILS" />
+          <EntitySet Name="STUDENT_MAST" EntityType="IPT_DATABASEModel.STUDENT_MAST" />
+          <EntitySet Name="SYSTEM_USER" EntityType="IPT_DATABASEModel.SYSTEM_USER" />
+        </EntityContainer>
+        <EntityType Name="CATOGARY_MAST">
+          <Key>
+            <PropertyRef Name="CATOGARY_ID" />
+          </Key>
+          <Property Name="CATOGARY_ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CATOGARY_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CATOGARY_DETAILS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IT_EXPERT_MAST">
+          <Key>
+            <PropertyRef Name="IT_EXPERT_USERNAME" />
+            <PropertyRef Name="IT_EXPERT_PASSWORD" />
+            <PropertyRef Name="AUTO_NUM" />
+          </Key>
+          <Property Name="IT_EXPERT_USERNAME" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IT_EXPERT_PASSWORD" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IT_EXPERT_EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IT_EXPERT_COMPANY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IT_EXPERT_EXPERT_AREA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IS_APPROVED" Type="Int16" />
+          <Property Name="IS_APPROVED_BY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IS_APPROVED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="PROF_PIC_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="USER_TYPE" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="AUTO_NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="MESSAGE_MASTER">
+          <Key>
+            <PropertyRef Name="STUDENT_ID" />
+            <PropertyRef Name="IT_EXPERT_USERNAME" />
+            <PropertyRef Name="AUTO_NUM" />
+          </Key>
+          <Property Name="STUDENT_ID" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="IT_EXPERT_USERNAME" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MESSAGE_BODY_STD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AUTO_NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MESSAGE_BODY_ITE" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="STUDENT_DETAILS">
+          <Key>
+            <PropertyRef Name="STUDENT_ID" />
+            <PropertyRef Name="AUTO_NUM" />
+          </Key>
+          <Property Name="STUDENT_ID" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_QUALIFICATIONS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_SKILLS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AUTO_NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="STUDENT_MAST">
+          <Key>
+            <PropertyRef Name="STUDENT_ID" />
+            <PropertyRef Name="AUTO_NUM" />
+          </Key>
+          <Property Name="STUDENT_ID" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_NAME" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_AGE" Type="Int32" />
+          <Property Name="STUDENT_COURSE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_USERNAME" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_PASSWORD" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="STUDENT_EMAIL" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IS_APPROVED" Type="Int16" Nullable="false" />
+          <Property Name="IS_APPROVED_BY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IS_APPROVED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="STUDENT_PROF_PIC" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="USER_TYPE" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="AUTO_NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="SYSTEM_USER">
+          <Key>
+            <PropertyRef Name="SU_USER_ID" />
+            <PropertyRef Name="AUTO_NUM" />
+          </Key>
+          <Property Name="SU_USER_ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SU_USERNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SU_PASSWORD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SU_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="USER_TYPE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="AUTO_NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IPT_DATABASEModelStoreContainer" CdmEntityContainer="IPT_DATABASEEntities1">
+          <EntitySetMapping Name="CATOGARY_MAST">
+            <EntityTypeMapping TypeName="IPT_DATABASEModel.CATOGARY_MAST">
+              <MappingFragment StoreEntitySet="CATOGARY_MAST">
+                <ScalarProperty Name="CATOGARY_DETAILS" ColumnName="CATOGARY_DETAILS" />
+                <ScalarProperty Name="CATOGARY_NAME" ColumnName="CATOGARY_NAME" />
+                <ScalarProperty Name="CATOGARY_ID" ColumnName="CATOGARY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IT_EXPERT_MAST">
+            <EntityTypeMapping TypeName="IPT_DATABASEModel.IT_EXPERT_MAST">
+              <MappingFragment StoreEntitySet="IT_EXPERT_MAST">
+                <ScalarProperty Name="AUTO_NUM" ColumnName="AUTO_NUM" />
+                <ScalarProperty Name="USER_TYPE" ColumnName="USER_TYPE" />
+                <ScalarProperty Name="PROF_PIC_URL" ColumnName="PROF_PIC_URL" />
+                <ScalarProperty Name="IS_APPROVED_DATE" ColumnName="IS_APPROVED_DATE" />
+                <ScalarProperty Name="IS_APPROVED_BY" ColumnName="IS_APPROVED_BY" />
+                <ScalarProperty Name="IS_APPROVED" ColumnName="IS_APPROVED" />
+                <ScalarProperty Name="IT_EXPERT_EXPERT_AREA" ColumnName="IT_EXPERT_EXPERT_AREA" />
+                <ScalarProperty Name="IT_EXPERT_COMPANY" ColumnName="IT_EXPERT_COMPANY" />
+                <ScalarProperty Name="IT_EXPERT_EMAIL" ColumnName="IT_EXPERT_EMAIL" />
+                <ScalarProperty Name="IT_EXPERT_PASSWORD" ColumnName="IT_EXPERT_PASSWORD" />
+                <ScalarProperty Name="IT_EXPERT_USERNAME" ColumnName="IT_EXPERT_USERNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MESSAGE_MASTER">
+            <EntityTypeMapping TypeName="IPT_DATABASEModel.MESSAGE_MASTER">
+              <MappingFragment StoreEntitySet="MESSAGE_MASTER">
+                <ScalarProperty Name="MESSAGE_BODY_ITE" ColumnName="MESSAGE_BODY_ITE" />
+                <ScalarProperty Name="AUTO_NUM" ColumnName="AUTO_NUM" />
+                <ScalarProperty Name="MESSAGE_BODY_STD" ColumnName="MESSAGE_BODY_STD" />
+                <ScalarProperty Name="IT_EXPERT_USERNAME" ColumnName="IT_EXPERT_USERNAME" />
+                <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STUDENT_DETAILS">
+            <EntityTypeMapping TypeName="IPT_DATABASEModel.STUDENT_DETAILS">
+              <MappingFragment StoreEntitySet="STUDENT_DETAILS">
+                <ScalarProperty Name="AUTO_NUM" ColumnName="AUTO_NUM" />
+                <ScalarProperty Name="STUDENT_SKILLS" ColumnName="STUDENT_SKILLS" />
+                <ScalarProperty Name="STUDENT_QUALIFICATIONS" ColumnName="STUDENT_QUALIFICATIONS" />
+                <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STUDENT_MAST">
+            <EntityTypeMapping TypeName="IPT_DATABASEModel.STUDENT_MAST">
+              <MappingFragment StoreEntitySet="STUDENT_MAST">
+                <ScalarProperty Name="AUTO_NUM" ColumnName="AUTO_NUM" />
+                <ScalarProperty Name="USER_TYPE" ColumnName="USER_TYPE" />
+                <ScalarProperty Name="STUDENT_PROF_PIC" ColumnName="STUDENT_PROF_PIC" />
+                <ScalarProperty Name="IS_APPROVED_DATE" ColumnName="IS_APPROVED_DATE" />
+                <ScalarProperty Name="IS_APPROVED_BY" ColumnName="IS_APPROVED_BY" />
+                <ScalarProperty Name="IS_APPROVED" ColumnName="IS_APPROVED" />
+                <ScalarProperty Name="STUDENT_EMAIL" ColumnName="STUDENT_EMAIL" />
+                <ScalarProperty Name="STUDENT_PASSWORD" ColumnName="STUDENT_PASSWORD" />
+                <ScalarProperty Name="STUDENT_USERNAME" ColumnName="STUDENT_USERNAME" />
+                <ScalarProperty Name="STUDENT_COURSE" ColumnName="STUDENT_COURSE" />
+                <ScalarProperty Name="STUDENT_AGE" ColumnName="STUDENT_AGE" />
+                <ScalarProperty Name="STUDENT_NAME" ColumnName="STUDENT_NAME" />
+                <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYSTEM_USER">
+            <EntityTypeMapping TypeName="IPT_DATABASEModel.SYSTEM_USER">
+              <MappingFragment StoreEntitySet="SYSTEM_USER">
+                <ScalarProperty Name="AUTO_NUM" ColumnName="AUTO_NUM" />
+                <ScalarProperty Name="USER_TYPE" ColumnName="USER_TYPE" />
+                <ScalarProperty Name="SU_NAME" ColumnName="SU_NAME" />
+                <ScalarProperty Name="SU_PASSWORD" ColumnName="SU_PASSWORD" />
+                <ScalarProperty Name="SU_USERNAME" ColumnName="SU_USERNAME" />
+                <ScalarProperty Name="SU_USER_ID" ColumnName="SU_USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

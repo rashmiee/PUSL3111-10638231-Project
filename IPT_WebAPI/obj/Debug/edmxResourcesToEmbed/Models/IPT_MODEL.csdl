@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IPT_DATABASEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="IPT_DATABASEEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="IT_EXPERT_MAST" EntityType="IPT_DATABASEModel.IT_EXPERT_MAST" />
+    <EntitySet Name="MESSAGE_MASTER" EntityType="IPT_DATABASEModel.MESSAGE_MASTER" />
+    <EntitySet Name="STUDENT_DETAILS" EntityType="IPT_DATABASEModel.STUDENT_DETAILS" />
+    <EntitySet Name="STUDENT_MAST" EntityType="IPT_DATABASEModel.STUDENT_MAST" />
+    <EntitySet Name="SYSTEM_USER" EntityType="IPT_DATABASEModel.SYSTEM_USER" />
+  </EntityContainer>
+  <EntityType Name="IT_EXPERT_MAST">
+    <Key>
+      <PropertyRef Name="IT_EXPERT_USERNAME" />
+      <PropertyRef Name="IT_EXPERT_PASSWORD" />
+      <PropertyRef Name="AUTO_NUM" />
+    </Key>
+    <Property Name="IT_EXPERT_USERNAME" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IT_EXPERT_PASSWORD" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IT_EXPERT_EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IT_EXPERT_COMPANY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IT_EXPERT_EXPERT_AREA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IS_APPROVED" Type="Int16" />
+    <Property Name="IS_APPROVED_BY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IS_APPROVED_DATE" Type="DateTime" Precision="0" />
+    <Property Name="PROF_PIC_URL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="USER_TYPE" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="AUTO_NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="MESSAGE_MASTER">
+    <Key>
+      <PropertyRef Name="STUDENT_ID" />
+      <PropertyRef Name="IT_EXPERT_USERNAME" />
+      <PropertyRef Name="AUTO_NUM" />
+    </Key>
+    <Property Name="STUDENT_ID" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="IT_EXPERT_USERNAME" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MESSAGE_BODY_STD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AUTO_NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MESSAGE_BODY_ITE" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="STUDENT_DETAILS">
+    <Key>
+      <PropertyRef Name="STUDENT_ID" />
+      <PropertyRef Name="AUTO_NUM" />
+    </Key>
+    <Property Name="STUDENT_ID" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="STUDENT_QUALIFICATIONS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="STUDENT_SKILLS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="AUTO_NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="STUDENT_MAST">
+    <Key>
+      <PropertyRef Name="STUDENT_ID" />
+      <PropertyRef Name="AUTO_NUM" />
+    </Key>
+    <Property Name="STUDENT_ID" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="STUDENT_NAME" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="STUDENT_AGE" Type="Int32" />
+    <Property Name="STUDENT_COURSE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="STUDENT_USERNAME" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="STUDENT_PASSWORD" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="STUDENT_EMAIL" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IS_APPROVED" Type="Int16" Nullable="false" />
+    <Property Name="IS_APPROVED_BY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IS_APPROVED_DATE" Type="DateTime" Precision="0" />
+    <Property Name="STUDENT_PROF_PIC" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="USER_TYPE" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="AUTO_NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="SYSTEM_USER">
+    <Key>
+      <PropertyRef Name="SU_USER_ID" />
+      <PropertyRef Name="AUTO_NUM" />
+    </Key>
+    <Property Name="SU_USER_ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SU_USERNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SU_PASSWORD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SU_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="USER_TYPE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="AUTO_NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+</Schema>

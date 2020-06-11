@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IPT_DATABASEModelStoreContainer" CdmEntityContainer="IPT_DATABASEEntities1">
+    <EntitySetMapping Name="IT_EXPERT_MAST">
+      <EntityTypeMapping TypeName="IPT_DATABASEModel.IT_EXPERT_MAST">
+        <MappingFragment StoreEntitySet="IT_EXPERT_MAST">
+          <ScalarProperty Name="AUTO_NUM" ColumnName="AUTO_NUM" />
+          <ScalarProperty Name="USER_TYPE" ColumnName="USER_TYPE" />
+          <ScalarProperty Name="PROF_PIC_URL" ColumnName="PROF_PIC_URL" />
+          <ScalarProperty Name="IS_APPROVED_DATE" ColumnName="IS_APPROVED_DATE" />
+          <ScalarProperty Name="IS_APPROVED_BY" ColumnName="IS_APPROVED_BY" />
+          <ScalarProperty Name="IS_APPROVED" ColumnName="IS_APPROVED" />
+          <ScalarProperty Name="IT_EXPERT_EXPERT_AREA" ColumnName="IT_EXPERT_EXPERT_AREA" />
+          <ScalarProperty Name="IT_EXPERT_COMPANY" ColumnName="IT_EXPERT_COMPANY" />
+          <ScalarProperty Name="IT_EXPERT_EMAIL" ColumnName="IT_EXPERT_EMAIL" />
+          <ScalarProperty Name="IT_EXPERT_PASSWORD" ColumnName="IT_EXPERT_PASSWORD" />
+          <ScalarProperty Name="IT_EXPERT_USERNAME" ColumnName="IT_EXPERT_USERNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESSAGE_MASTER">
+      <EntityTypeMapping TypeName="IPT_DATABASEModel.MESSAGE_MASTER">
+        <MappingFragment StoreEntitySet="MESSAGE_MASTER">
+          <ScalarProperty Name="MESSAGE_BODY_ITE" ColumnName="MESSAGE_BODY_ITE" />
+          <ScalarProperty Name="AUTO_NUM" ColumnName="AUTO_NUM" />
+          <ScalarProperty Name="MESSAGE_BODY_STD" ColumnName="MESSAGE_BODY_STD" />
+          <ScalarProperty Name="IT_EXPERT_USERNAME" ColumnName="IT_EXPERT_USERNAME" />
+          <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STUDENT_DETAILS">
+      <EntityTypeMapping TypeName="IPT_DATABASEModel.STUDENT_DETAILS">
+        <MappingFragment StoreEntitySet="STUDENT_DETAILS">
+          <ScalarProperty Name="AUTO_NUM" ColumnName="AUTO_NUM" />
+          <ScalarProperty Name="STUDENT_SKILLS" ColumnName="STUDENT_SKILLS" />
+          <ScalarProperty Name="STUDENT_QUALIFICATIONS" ColumnName="STUDENT_QUALIFICATIONS" />
+          <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STUDENT_MAST">
+      <EntityTypeMapping TypeName="IPT_DATABASEModel.STUDENT_MAST">
+        <MappingFragment StoreEntitySet="STUDENT_MAST">
+          <ScalarProperty Name="AUTO_NUM" ColumnName="AUTO_NUM" />
+          <ScalarProperty Name="USER_TYPE" ColumnName="USER_TYPE" />
+          <ScalarProperty Name="STUDENT_PROF_PIC" ColumnName="STUDENT_PROF_PIC" />
+          <ScalarProperty Name="IS_APPROVED_DATE" ColumnName="IS_APPROVED_DATE" />
+          <ScalarProperty Name="IS_APPROVED_BY" ColumnName="IS_APPROVED_BY" />
+          <ScalarProperty Name="IS_APPROVED" ColumnName="IS_APPROVED" />
+          <ScalarProperty Name="STUDENT_EMAIL" ColumnName="STUDENT_EMAIL" />
+          <ScalarProperty Name="STUDENT_PASSWORD" ColumnName="STUDENT_PASSWORD" />
+          <ScalarProperty Name="STUDENT_USERNAME" ColumnName="STUDENT_USERNAME" />
+          <ScalarProperty Name="STUDENT_COURSE" ColumnName="STUDENT_COURSE" />
+          <ScalarProperty Name="STUDENT_AGE" ColumnName="STUDENT_AGE" />
+          <ScalarProperty Name="STUDENT_NAME" ColumnName="STUDENT_NAME" />
+          <ScalarProperty Name="STUDENT_ID" ColumnName="STUDENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SYSTEM_USER">
+      <EntityTypeMapping TypeName="IPT_DATABASEModel.SYSTEM_USER">
+        <MappingFragment StoreEntitySet="SYSTEM_USER">
+          <ScalarProperty Name="AUTO_NUM" ColumnName="AUTO_NUM" />
+          <ScalarProperty Name="USER_TYPE" ColumnName="USER_TYPE" />
+          <ScalarProperty Name="SU_NAME" ColumnName="SU_NAME" />
+          <ScalarProperty Name="SU_PASSWORD" ColumnName="SU_PASSWORD" />
+          <ScalarProperty Name="SU_USERNAME" ColumnName="SU_USERNAME" />
+          <ScalarProperty Name="SU_USER_ID" ColumnName="SU_USER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
